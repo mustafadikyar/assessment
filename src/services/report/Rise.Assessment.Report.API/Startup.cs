@@ -65,6 +65,8 @@ namespace Rise.Assessment.Report.API
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+
             app.UseRouting();
 
             app.UseAuthorization();
