@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using RabbitMQ.Client;
+using Rise.Assessment.Phonebook.API.BackgroundServices;
 using Rise.Assessment.Phonebook.Application.Handlers;
 using Rise.Assessment.Phonebook.Infrastructure;
 using System;
@@ -44,6 +45,8 @@ namespace Rise.Assessment.Phonebook.API
             services.AddMediatR(typeof(CreatePersonDetailCommandHandler).Assembly);
             services.AddMediatR(typeof(DeletePersonCommandHandler).Assembly);
             services.AddMediatR(typeof(DeletePersonDetailCommandHandler).Assembly);
+
+            services.AddHostedService<ExcelReportBackgroundService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
