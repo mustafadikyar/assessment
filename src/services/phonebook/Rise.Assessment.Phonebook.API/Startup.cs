@@ -29,12 +29,6 @@ namespace Rise.Assessment.Phonebook.API
                     configure => configure.MigrationsAssembly("Rise.Assessment.Phonebook.Infrastructure"));
             });
 
-            services.AddDbContext<PhonebookDbContext>(opt =>
-            {
-                opt.UseSqlServer(Configuration.GetConnectionString("ReportConnection"),
-                    configure => configure.MigrationsAssembly("Rise.Assessment.Phonebook.Infrastructure"));
-            });
-
             services.AddMediatR(typeof(CreatePersonCommandHandler).Assembly);
             services.AddMediatR(typeof(CreatePersonDetailCommandHandler).Assembly);
             services.AddMediatR(typeof(DeletePersonCommandHandler).Assembly);
