@@ -8,7 +8,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using RabbitMQ.Client;
 using Rise.Assessment.Report.API.Models.Contexts;
+using Rise.Assessment.Report.API.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +30,16 @@ namespace Rise.Assessment.Report.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            #region RabbitMQ
+            services.AddSingleton(service => new ConnectionFactory()
+            {
+                Uri = new Uri(Configuration.GetConnectionString("RabbitMQ")),
+                DispatchConsumersAsync = true
+            });
+            services.AddSingleton<Services.ReportService>();
+            services.AddSingleton<ReportPublisher>();
+            #endregion
+
             services.AddDbContext<ReportDbContext>(opt =>
             {
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
