@@ -1,16 +1,13 @@
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Rise.Assessment.Phonebook.Application.Handlers;
+using Rise.Assessment.Phonebook.Infrastructure;
 
 namespace Rise.Assessment.Phonebook.API
 {
@@ -26,6 +23,16 @@ namespace Rise.Assessment.Phonebook.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<PhonebookDbContext>(opt =>
+            {
+                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                    configure => configure.MigrationsAssembly("Rise.Assessment.Phonebook.Infrastructure"));
+            });
+
+            services.AddMediatR(typeof(CreatePersonCommandHandler).Assembly);
+            services.AddMediatR(typeof(CreatePersonDetailCommandHandler).Assembly);
+            services.AddMediatR(typeof(DeletePersonCommandHandler).Assembly);
+            services.AddMediatR(typeof(DeletePersonDetailCommandHandler).Assembly);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
