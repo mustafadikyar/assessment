@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Rise.Assessment.Phonebook.Domain\Rise.Assessment.Phonebook.Domain.csproj" />
     <ProjectReference Include="..\Rise.Assessment.Phonebook.Infrastructure\Rise.Assessment.Phonebook.Infrastructure.csproj" />
   </ItemGroup>
