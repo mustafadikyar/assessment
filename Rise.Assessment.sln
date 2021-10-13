@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rise.Assessment.Phonebook.I
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "report", "report", "{72EE7232-DF3B-4643-85B0-ACD5B6A5E62F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rise.Assessment.Report.API", "src\services\report\Rise.Assessment.Report.API\Rise.Assessment.Report.API.csproj", "{F582BCF4-FD2D-40E3-BEF7-AB48447FD5D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rise.Assessment.Report.API", "src\services\report\Rise.Assessment.Report.API\Rise.Assessment.Report.API.csproj", "{F582BCF4-FD2D-40E3-BEF7-AB48447FD5D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

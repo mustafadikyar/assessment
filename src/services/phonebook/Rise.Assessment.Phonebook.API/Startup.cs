@@ -45,6 +45,7 @@ namespace Rise.Assessment.Phonebook.API
             services.AddMediatR(typeof(CreatePersonDetailCommandHandler).Assembly);
             services.AddMediatR(typeof(DeletePersonCommandHandler).Assembly);
             services.AddMediatR(typeof(DeletePersonDetailCommandHandler).Assembly);
+            services.AddMediatR(typeof(GetReportQueryHandler).Assembly);
 
             services.AddHostedService<ExcelReportBackgroundService>();
 
