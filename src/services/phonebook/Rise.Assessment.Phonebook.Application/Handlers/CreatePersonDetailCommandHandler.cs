@@ -19,8 +19,8 @@ namespace Rise.Assessment.Phonebook.Application.Handlers
 
         public async Task<PersonDetailCreateDTO> Handle(CreatePersonDetailCommand request, CancellationToken cancellationToken)
         {
-            var createdOrderDetail = new PersonDetail(request.PhoneNumber, request.MailAddress, request.Location);
-
+            var createdOrderDetail = new PersonDetail(request.PhoneNumber, request.MailAddress, request.Location, request.PersonId);
+            
             await _context.AddAsync(createdOrderDetail);
             var result = await _context.SaveChangesAsync();
 

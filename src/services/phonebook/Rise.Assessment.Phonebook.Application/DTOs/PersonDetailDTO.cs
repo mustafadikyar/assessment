@@ -2,8 +2,9 @@
 {
     public class PersonDetailDTO
     {
-        public string PhoneNumber { get; private set; }
-        public string MailAddress { get; private set; }
-        public string Location { get; private set; }
+        public string PhoneNumber { get; set; }
+        public string MailAddress { get; set; }
+        public string Location { get; set; }
+        public int PersonId { get; set; }
     }
 }

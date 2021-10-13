@@ -23,7 +23,7 @@ namespace Rise.Assessment.Phonebook.Application.Handlers
 
             request.PersonDetails.ForEach(detail =>
             {
-                createdPerson.AddPersonDetail(detail.PhoneNumber, detail.MailAddress, detail.Location);
+                createdPerson.AddPersonDetail(detail.PhoneNumber, detail.MailAddress, detail.Location, detail.PersonId);
             });
 
             await _context.AddAsync(createdPerson);

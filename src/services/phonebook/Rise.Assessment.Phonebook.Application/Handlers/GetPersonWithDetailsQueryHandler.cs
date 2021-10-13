@@ -23,7 +23,7 @@ namespace Rise.Assessment.Phonebook.Application.Handlers
         {
             var person = await _context.Persons.Include(person => person.PersonDetails).FirstOrDefaultAsync(person => person.Id == request.PersonId);
 
-            if (person != null)
+            if (person.Id != 0)
             {
                 var personDto = ObjectMapper.Mapper.Map<PersonDTO>(person);
                 return personDto;

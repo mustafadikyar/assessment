@@ -25,9 +25,9 @@ namespace Rise.Assessment.Phonebook.Domain.PhonebookAggregate
             Company = company;
         }
 
-        public void AddPersonDetail(string phoneNumber, string mailAddress, string location)
+        public void AddPersonDetail(string phoneNumber, string mailAddress, string location, int personId)
         {
-            PersonDetail added = new PersonDetail(phoneNumber, mailAddress, location);
+            PersonDetail added = new PersonDetail(phoneNumber, mailAddress, location, personId);
             _personDetails.Add(added);
         }
     }
