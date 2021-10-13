@@ -6,8 +6,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using RabbitMQ.Client;
 using Rise.Assessment.Phonebook.Application.Handlers;
 using Rise.Assessment.Phonebook.Infrastructure;
+using System;
 
 namespace Rise.Assessment.Phonebook.API
 {
@@ -23,6 +25,15 @@ namespace Rise.Assessment.Phonebook.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            #region RabbitMQ
+            services.AddSingleton(service => new ConnectionFactory()
+            {
+                Uri = new Uri(Configuration.GetConnectionString("RabbitMQ")),
+                DispatchConsumersAsync = true
+            });
+            services.AddSingleton<Services.RabbitMQClientService>();
+            #endregion
+
             services.AddDbContext<PhonebookDbContext>(opt =>
             {
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
