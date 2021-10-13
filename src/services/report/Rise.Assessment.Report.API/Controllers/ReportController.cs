@@ -22,6 +22,13 @@ namespace Rise.Assessment.Report.API.Controllers
             _rabbitMQPublisher = rabbitMQPublisher;
         }
 
+        [HttpGet("getall")]
+        public async Task<IActionResult> GetAll()
+        {
+            var reports = await _context.Report.ToListAsync();
+            return Ok(reports);
+        }
+
         [HttpGet]
         public async Task<IActionResult> CreateReportAsync()
         {
