@@ -56,7 +56,7 @@ namespace Rise.Assessment.Phonebook.API.Test.Controllers
 
         [Theory]
         [InlineData(1)]
-        public async Task GetPersonWithDetails_ActionExecutes_ReturnNotFoundResultAsync(int personId)
+        public async Task GetPersonWithDetails_ActionExecutes_ReturnOkResultAsync(int personId)
         {
             // Arrange
             var mediatorMock = new Mock<IMediator>();
