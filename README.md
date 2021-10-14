@@ -12,7 +12,7 @@
 - MS Sql Server
 - ClosedXML
 
-![](https://raw.githubusercontent.com/mustafadikyar/rise-assessment/master/files/phonebook.png?token=AJW7UPZOPAUTVH6V7SDQEADBNAZMW)
+![](https://github.com/mustafadikyar/rise-assessment/blob/master/files/phonebook.png)
 
 -- Rise.Assessment.Phonebook.Infrastructure & Rise.Assessment.Phonebook.API üzerinden migration yapılmalı. <br/>
 
@@ -30,7 +30,7 @@
 - RabbitMQ
 - MS Sql Server
 
-![](https://raw.githubusercontent.com/mustafadikyar/rise-assessment/master/files/report.png?token=AJW7UP2PKBJMGBFHCRH4AZLBNAZOC)
+![](https://github.com/mustafadikyar/rise-assessment/blob/master/files/report.png)
 
 -- Rise.Assessment.Report.API üzerinden migration yapılmalı. <br/>
 
