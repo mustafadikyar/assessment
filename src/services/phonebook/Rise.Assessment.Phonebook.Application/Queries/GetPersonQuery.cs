@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Rise.Assessment.Phonebook.Application.Queries
 {
-    public class GetPersonQuery : IRequest<List<PersonDTO>>
+    public class GetPersonQuery : IRequest<PersonDTO>
     {
         public int PersonId { get; set; }
     }

@@ -23,6 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "report", "report", "{72EE72
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rise.Assessment.Report.API", "src\services\report\Rise.Assessment.Report.API\Rise.Assessment.Report.API.csproj", "{F582BCF4-FD2D-40E3-BEF7-AB48447FD5D9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7E180F62-F8FB-463E-95AC-63B50C67543D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rise.Assessment.Phonebook.API.Test", "tests\Rise.Assessment.Phonebook.API.Test\Rise.Assessment.Phonebook.API.Test.csproj", "{E30E51E6-B20C-44B4-9A31-C45450DA3E1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,10 @@ Global
 		{F582BCF4-FD2D-40E3-BEF7-AB48447FD5D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F582BCF4-FD2D-40E3-BEF7-AB48447FD5D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F582BCF4-FD2D-40E3-BEF7-AB48447FD5D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E30E51E6-B20C-44B4-9A31-C45450DA3E1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E30E51E6-B20C-44B4-9A31-C45450DA3E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E30E51E6-B20C-44B4-9A31-C45450DA3E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E30E51E6-B20C-44B4-9A31-C45450DA3E1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +75,7 @@ Global
 		{D1A8B307-A340-4AD2-B77A-A15C0DF5526C} = {FA5F7B84-6E25-4960-8A0A-E7C9A5AD6C3B}
 		{72EE7232-DF3B-4643-85B0-ACD5B6A5E62F} = {6375F6BA-BC9E-4F2A-8A81-50F318BB79D0}
 		{F582BCF4-FD2D-40E3-BEF7-AB48447FD5D9} = {72EE7232-DF3B-4643-85B0-ACD5B6A5E62F}
+		{E30E51E6-B20C-44B4-9A31-C45450DA3E1F} = {7E180F62-F8FB-463E-95AC-63B50C67543D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D53F55F3-EDA9-4FE6-95EE-50C025922F83}

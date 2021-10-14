@@ -4,14 +4,12 @@ using Rise.Assessment.Phonebook.Application.DTOs;
 using Rise.Assessment.Phonebook.Application.Mappings;
 using Rise.Assessment.Phonebook.Application.Queries;
 using Rise.Assessment.Phonebook.Infrastructure;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Rise.Assessment.Phonebook.Application.Handlers
 {
-    public class GetPersonQueryHandler : IRequestHandler<GetPersonQuery, List<PersonDTO>>
+    public class GetPersonQueryHandler : IRequestHandler<GetPersonQuery, PersonDTO>
     {
         private readonly PhonebookDbContext _context;
 
@@ -20,14 +18,14 @@ namespace Rise.Assessment.Phonebook.Application.Handlers
             _context = context;
         }
 
-        public async Task<List<PersonDTO>> Handle(GetPersonQuery request, CancellationToken cancellationToken)
+        public async Task<PersonDTO> Handle(GetPersonQuery request, CancellationToken cancellationToken)
         {
-            var persons = await _context.Persons.ToListAsync();
+            var person = await _context.Persons.FirstOrDefaultAsync(person => person.Id == request.PersonId);
 
-            if (persons.Any())
+            if (person?.Id != null)
             {
-                var personsDto = ObjectMapper.Mapper.Map<List<PersonDTO>>(persons);
-                return personsDto;
+                var personDto = ObjectMapper.Mapper.Map<PersonDTO>(person);
+                return personDto;
             }
             return null;
         }
